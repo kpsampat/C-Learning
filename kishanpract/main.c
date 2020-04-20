@@ -1,9 +1,8 @@
-#include
-<stdio.h>
+#include <stdio.h>
 
 /* Assignment operators */
 
-int		sst_val(int v)
+int sst_val(int v)
 {
 printf("v equals %d\n",v);
 v+=20;
@@ -14,7 +13,7 @@ v*=200000;
 printf("multiply v equals %d\n",v);
 return(0);
 }
-int		main()
+int main()
 {
 	int	testInteger;
 	int	temp;
@@ -24,8 +23,8 @@ int		main()
 
 	temp = 0;
 	new = 'a';
-	test_string_dy = mall
 	test_string_dy = "abcde";
+	printf("%p \n",&test_string_dy);
 	printf("Enter an integer: ");
 	scanf("%d", &testInteger);
 	printf("Number = %d",testInteger);
