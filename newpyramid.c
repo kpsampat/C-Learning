@@ -2,7 +2,7 @@
 
 #include <unistd.h>
 #include <stdlib.h>
-#include <stdio.h>
+// #include <stdio.h>
 
 
 int get_total_num_lines(int stage);
