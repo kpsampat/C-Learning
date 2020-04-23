@@ -2,6 +2,7 @@
 
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 int get_total_num_lines(int stage);
 
@@ -100,10 +101,44 @@ void pyramid(int size){
 		}
 		
 		write(1,&b,1);
-		while(k <  (2*i-1) + ((current_stage - 1) * 4 ) ) 
+		int total_stars = (2*i-1) + ((current_stage - 1) * 4 );
+		while(k <  total_stars) 
 		{	
-			write(1,&a,1);
-			k = k + 1;	
+			if ( i > line - size )
+			{
+			
+				 int start = (total_stars - size) / 2 ;
+				 int end =  (total_stars + size) / 2 ;
+				
+				 if( k >= start && k < end) 
+				 {
+					 if(size % 5 ==0 && i == line - (size/2))
+					 {
+							
+							 if(k >= start+((end - start)/2)+1 && k+1 < end)
+							 {
+								 write(1,"$",1);
+							 }
+							 else{
+								 write(1 , &l ,1);
+							 }
+					 }
+					 else{
+
+						 write(1, &l ,1);
+					 }
+				 }
+				 else{
+					 write(1, &a, 1);
+				 }
+			}
+			else{
+				write(1,&a,1);
+			}
+			k = k + 1;
+//			printf("Stars %d \n",k);
+//			printf("current Stage %d \n",current_stage);
+//			printf("current line %d \n",i);	
 		}
 		write(1,&c,1);
 		k = 0;
